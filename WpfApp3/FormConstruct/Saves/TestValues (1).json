@@ -1,0 +1,67 @@
+{
+  "Description": "Dav want mainden",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "do you have mainden",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "yes"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "no"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "how many bitches do you want",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "1"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "10"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "100"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "are you gay",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "yes"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "no"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 3,
+    "RedZoneText": "you are maindenless",
+    "YellowZoneText": "you have porn addiction",
+    "GreenZoneText": "good you have at least one maiden"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "Description": "Fuck trump",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "trump pedor"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "fuck pedor"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 2,
+    "RedZoneText": "вфв",
+    "YellowZoneText": "фвфв",
+    "GreenZoneText": "вфв"
+  }
+}

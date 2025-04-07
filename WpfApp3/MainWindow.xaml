@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+       Title="MainMenu" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="bAddNewQuastion" Grid.Column="1" Grid.ColumnSpan="1"  Grid.Row="1" Content="Add new test" 
+                Click="bAddNewQuastion_Click" 
+                 Height="30"/>
+        <DataGrid Name ="dataGrid" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" AutoGenerateColumns="False" 
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
+                  GridLinesVisibility="None" SelectionMode="Single"
+                  CellEditEnding="dataGrid_CellEditEnding" PreviewKeyDown="dataGrid_PreviewKeyDown" MouseDoubleClick="dataGrid_MouseDoubleClick" 
+                  PreviewTextInput="dataGrid_PreviewTextInput" LoadingRow="dataGrid_LoadingRow" 
+                  >
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="dgtcNameColumn" Binding="{Binding Name}" Header="Name" Width="1*"   IsReadOnly="False" />
+                <DataGridTextColumn Binding="{Binding DateOfLastChange}" Header="DateOfLastChange" Width="1*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,114 @@
+{
+  "Description": "Description of project djlfajldjsf ldjsldsjadfjd lsajfld jasldjf lsajfld jksalfj ldajf",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text jfdlajf ljasldf jlsdjf lajsf ldjaslfj safj lasjdf lasjfdlj alf",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 1s fdsajlkf jsdalj lksajdl jfdlsajf lsajfl jaslfj aslf"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2 fkdlajsfl jsajfdkl jsalfj lsajfd ldjaslfj lajsdf "
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text jfdlajf ljasldf jlsdjf lajsf ldjaslfj safj lasjdf lasjfdlj alf",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 1s fdsajlkf jsdalj lksajdl jfdlsajf lsajfl jaslfj aslf"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2 fkdlajsfl jsajfdkl jsalfj lsajfd ldjaslfj lajsdf "
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 4,
+    "LoverValue": 2.163218390804597,
+    "UpperValue": 4.050574712643677,
+    "IsChecked": false,
+    "RedZoneText": "fkjsdkla jfldjsa fldjsalfj dlsaj fkdjkfj ldfj kljdf jdlj dlfj lfj djlakj ljasl jflsaj flja lkjslkf jalk jfldkaj fdasfl jladjf lkfdaj ljf ldaksjf lajf lasdf jlask fjaslfjlsakfj alfjalkj falkf dalksfjalj dfjladjf lasj lja fljaldjf dlasjf ljsaf ",
+    "YellowZoneText": "fkjslakdfj lsjfd lasjfl jaslfj aslj f",
+    "GreenZoneText": "ldkjflkas jdljsalf jalfj sja lfjaldsj asjdl fj"
+  }
+}
