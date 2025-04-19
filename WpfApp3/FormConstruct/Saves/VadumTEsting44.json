@@ -1,0 +1,185 @@
+{
+  "Description": "лаоіфвдлоалд оіфдлвоа фдоі аоіфво адіфо адоі дфождв лофвідао jfklasj jfdlasj flajs ljsf dsaf dasf ",
+  "Questions": [
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text asfa dfa fds ffjkflj aljf lajf lajsdfl jalsjf kldfjl jldja slfdj alksdjf lasjf dljsf laj klfdjalj dflajf lkdjalf jladjf lajd flj",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 1 fjlak jdlasj flsajd flasjdf ljdlsaj fdlja sldfj laj flasjd"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textf as dfa fda fs fda",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text fads fa fad fd",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textf asfd asf asf ddas df",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true fkdasl fjlasj falsfj as f"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2f skd f;lask; fa;sk f;as lkf"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true f;dsalk faks f;kdas; kf;ask f;sak f "
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true fdas f;lksa;lk f;ksa;f ksa"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text fdsa fasdf adsf a fd af",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textf asfd asf asf ddas df",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true fkdasl fjlasj falsfj as f"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2f skd f;lask; fa;sk f;as lkf"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true f;dsalk faks f;kdas; kf;ask f;sak f "
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true fdas f;lksa;lk f;ksa;f ksa"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 13,
+    "LoverValue": 4.333333333333333,
+    "UpperValue": 9.061149425287352,
+    "IsChecked": true,
+    "RedZoneText": "you are sick go kill yourself now please you trash and stink maidenless slut",
+    "YellowZoneText": "yellow yellow yellow yellow yellow yellowyellowyellowyellowyellowyellowyellowyellowyellowyellowyellowyellow yellowyellow yellowyellow yellowyellowyellow yellowyellowyellowyellow yellowyellow yellowyellowyellowyellowyellow",
+    "GreenZoneText": "you are ok cool rich goodbye",
+    "FirstInteval": [
+      0,
+      4
+    ],
+    "SecondInterval": [
+      4,
+      9
+    ],
+    "ThirdInterval": [
+      9,
+      13
+    ]
+  }
+}

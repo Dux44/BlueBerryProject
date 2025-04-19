@@ -1,0 +1,239 @@
+{
+  "Description": "Description of project",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 4"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 4"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 18,
+    "LoverValue": 6.0,
+    "UpperValue": 12.0,
+    "IsChecked": true,
+    "RedZoneText": "fdsafdasfdfasfs fsda asdf  asdf ",
+    "YellowZoneText": "asfadfadfasf fsdf asdf  adsf ",
+    "GreenZoneText": "fdasfdfasf sadf  asdf ",
+    "FirstInteval": [
+      0,
+      6
+    ],
+    "SecondInterval": [
+      6,
+      12
+    ],
+    "ThirdInterval": [
+      12,
+      18
+    ]
+  }
+}

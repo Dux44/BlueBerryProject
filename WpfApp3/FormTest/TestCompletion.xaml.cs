@@ -157,6 +157,9 @@ namespace BlueBerryProject.FormTest
             {
                 return 2; //yellow response
             }
+
+            if(userScore > responseData.ThirdInterval[1]) userScore = responseData.ThirdInterval[1];
+
             if(userScore > responseData.ThirdInterval[0] && userScore <= responseData.ThirdInterval[1])
             {
                 return 3; //green response

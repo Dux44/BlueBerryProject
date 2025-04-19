@@ -446,6 +446,8 @@ namespace BlueBerryProject.FormConstruct
         }
         public void UpdateDoubleSliderMaxValueDefault(int newMaxValue)
         {
+            
+
             double maxValue = Convert.ToDouble(newMaxValue);
             doubleSlider.MaxValue = maxValue;
             doubleSlider.LowerValue = maxValue / 3.0;
@@ -457,6 +459,7 @@ namespace BlueBerryProject.FormConstruct
         }
         public void UpdateDoubleSliderValuesFromDTO(int newMaxValue,double newLowerValue, double newUppderValue)
         {
+
             doubleSlider.MaxValue = Convert.ToDouble(newMaxValue);
             showMaxValue.Content = newMaxValue.ToString();
             doubleSlider.LowerValue = newLowerValue;

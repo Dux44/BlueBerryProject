@@ -157,9 +157,11 @@ namespace BlueBerryProject.FormConstruct
             }
             try
             {
-                response = new Response(data.Response.MaxValue);
+                int maxValue = GetNumberOfCorrectsFromQuestion();
+
+                response = new Response(maxValue);
                 response.CreateUIForResponse(wpPannel);
-                response.UpdateDoubleSliderValuesFromDTO(data.Response.MaxValue, data.Response.LoverValue, data.Response.UpperValue);
+                response.UpdateDoubleSliderValuesFromDTO(maxValue, data.Response.LoverValue, data.Response.UpperValue);
                 response.UpdateCheckBoxFromDTO(data.Response.IsChecked);
                 response.UpdateTextes(data.Response.RedZoneText, data.Response.YellowZoneText, data.Response.GreenZoneText);
                 response.SetControlState(false);

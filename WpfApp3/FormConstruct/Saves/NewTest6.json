@@ -1,0 +1,114 @@
+{
+  "Description": "Description of project",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 4"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "Variant 5"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 7,
+    "LoverValue": 2.3333333333333335,
+    "UpperValue": 4.666666666666667,
+    "IsChecked": false,
+    "RedZoneText": "fdsdfs",
+    "YellowZoneText": "sdfasf",
+    "GreenZoneText": "fsdafdsaf",
+    "FirstInteval": [
+      0,
+      2
+    ],
+    "SecondInterval": [
+      2,
+      4
+    ],
+    "ThirdInterval": [
+      4,
+      7
+    ]
+  }
+}
