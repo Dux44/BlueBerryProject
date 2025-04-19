@@ -15,6 +15,8 @@ using BlueBerryProject.FormConstruct;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Shell;
+using System.Windows.Controls.Ribbon;
+using System.Windows.Controls.Primitives;
 
 namespace WpfApp3
 {
@@ -47,6 +49,27 @@ namespace WpfApp3
             Project project = new Project(name, path);
             projects.Add(project);
             //dataGrid.Items.Refresh();
+        }
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dataGrid.CurrentColumn == null) return;
+
+            int selectedIndex = dataGrid.SelectedIndex;
+            if (selectedIndex >= 0 && selectedIndex < projects.Count)
+            {
+                try
+                {
+                    TestConstruct testConstruct = new TestConstruct(projects[selectedIndex].Path, projects[selectedIndex].Name);
+                    Hide(); //тут баг при закритті форми TestCompletion відкривається зразу дві вкладені форми TestConstruct і MainWindow а мало б лише TestConstruct а при закритті можливо взагалі закрити програму
+                    testConstruct.ShowDialog();
+                    Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка при відкриті: {ex.Message}");
+                }
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -148,7 +171,7 @@ namespace WpfApp3
             }
             catch(IOException)
             {
-                MessageBox.Show("Було введено недопустиме ім'я!","IOError",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Було введено недопустиме ім'я!","IOError",MessageBoxButton.OK,MessageBoxImage.Error); //це відловлення на те що через вставку було додано заборонені символи тому операція буде скасована
 
                 WriteTextInDataGridRow(selectedIndex, originalName);
                 e.Cancel = true;
@@ -222,60 +245,54 @@ namespace WpfApp3
 
         private void dataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Delete) //видалення об'єкта
-            {
-                e.Handled = true; //зупинити обробку delete для інших обробників
+            int index = dataGrid.SelectedIndex;
 
-                int index = dataGrid.SelectedIndex;
-                MessageBoxResult choice = MessageBox.Show($"Ви точно хочете видалити форму {projects[index].Name}", "видалення форми", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if(e.Key == Key.Delete && index >= 0) //обробка видалення проєкта
+            {
+                e.Handled = true;
+                MessageBoxResult choice = MessageBox.Show($"Ви точно хочете видалити форму {projects[index].Name}?", "видалення форми", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (choice == MessageBoxResult.Yes)
                 {
                     try
                     {
-                        File.Delete(projects[index].Path); //видалення файлу 
-                        projects.RemoveAt(index);          //видалення об'єкту з масиву
-                        RefreshRowBackground();            //оновлення кольорів усіх об'єктів
+                        File.Delete(projects[index].Path); //видалення
+                        projects.RemoveAt(index);
+                        RefreshRowBackground();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
                 }
-                else if (choice == MessageBoxResult.No)
-                {
-                    return;
-                }
+                return;
             }
-            if (e.Key == Key.Enter)
+            if(e.Key == Key.F2) //обробка зміни імені проєкта
             {
                 e.Handled = true;
+                dataGrid.BeginEdit();
+                return;
             }
-            //поставити обробник на Enter (захід на вказану форму але з умовою що НЕ виходим з форми коли працював CellEditEnding)
-        }
-
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            int selectedIndex = dataGrid.SelectedIndex;
-            if (selectedIndex != -1) //заглушка на неіснуючі елементи може краще try?
+            if(e.Key == Key.Enter) //обробка заходу в проєкт після натискання Enter
             {
-                TestConstruct testConstruct = new TestConstruct(projects[selectedIndex].Path, projects[selectedIndex].Name);
-                Hide();
-                testConstruct.ShowDialog();
-                Show();
+                e.Handled = true;
+                if (index >= 0 && index < projects.Count)
+                {
+                    try
+                    {
+                        TestConstruct testConstruct = new TestConstruct(projects[index].Path, projects[index].Name);
+                        Hide();
+                        testConstruct.ShowDialog();
+                        Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Помилка при відкритті: {ex.Message}");
+                    }
+                }
             }
-            //try
-            //{
-            //    TestConstruct testConstruct = new TestConstruct(projects[selectedIndex].Path, projects[selectedIndex].Name);
-            //    Hide();
-            //    testConstruct.ShowDialog();
-            //    Show();
-            //}
-            //catch(IndexOutOfRangeException)
-            //{
-            //    MessageBox.Show("nothing to open list is empty");
-
-            //}
         }
+
+       
         private void RefreshRowBackground()//цей метод перемальовує всі об'єкти dataGrid після події видалення
         {
             for (int i = 0; i < dataGrid.Items.Count; i++)
@@ -305,6 +322,10 @@ namespace WpfApp3
                 else e.Row.Background = Brushes.LightBlue;
             }
         }
+
+       
+
+        
     }
 }
 

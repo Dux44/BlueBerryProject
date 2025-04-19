@@ -24,12 +24,26 @@
         <Button x:Name="bAddNewQuastion" Grid.Column="1" Grid.ColumnSpan="1"  Grid.Row="1" Content="Add new test" 
                 Click="bAddNewQuastion_Click" 
                  Height="30"/>
-        <DataGrid Name ="dataGrid" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" AutoGenerateColumns="False" 
+
+        <DataGrid Name="dataGrid"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  Grid.Row="3"
+                  AutoGenerateColumns="False"
                   HeadersVisibility="Column"
-                  CanUserAddRows="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
-                  GridLinesVisibility="None" SelectionMode="Single"
-                  CellEditEnding="dataGrid_CellEditEnding" PreviewKeyDown="dataGrid_PreviewKeyDown" MouseDoubleClick="dataGrid_MouseDoubleClick" 
-                  PreviewTextInput="dataGrid_PreviewTextInput" LoadingRow="dataGrid_LoadingRow" 
+                  CanUserAddRows="False"
+                  CanUserResizeRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  CanUserReorderColumns="False"
+                  GridLinesVisibility="None"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CellEditEnding="dataGrid_CellEditEnding"
+                  PreviewKeyDown="dataGrid_PreviewKeyDown"
+                  MouseDoubleClick="dataGrid_MouseDoubleClick"
+                  PreviewTextInput="dataGrid_PreviewTextInput"
+                  LoadingRow="dataGrid_LoadingRow"
                   >
             <DataGrid.Columns >
                 <DataGridTextColumn x:Name="dgtcNameColumn" Binding="{Binding Name}" Header="Name" Width="1*"   IsReadOnly="False" />

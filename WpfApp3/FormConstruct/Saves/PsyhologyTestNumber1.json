@@ -1,0 +1,136 @@
+{
+  "Description": "SOme new testing",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "false"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "false"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 4"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 4"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 7,
+    "LoverValue": 3.028505747126439,
+    "UpperValue": 5.072183908045977,
+    "IsChecked": true,
+    "RedZoneText": "great you have som great brain damage so i recomended you go to hospital and get some help",
+    "YellowZoneText": "not so bad but you have some sort of problem but it ainght bad so i recomend you go to hospital or do what makes you happy",
+    "GreenZoneText": "everything good i glad your mental health is great have a nice day",
+    "FirstInteval": [
+      0,
+      3
+    ],
+    "SecondInterval": [
+      3,
+      5
+    ],
+    "ThirdInterval": [
+      5,
+      7
+    ]
+  }
+}

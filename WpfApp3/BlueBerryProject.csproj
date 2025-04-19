@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="FormConstruct\Saves\" />
-    <Folder Include="FormTest\" />
   </ItemGroup>
 
   <ItemGroup>

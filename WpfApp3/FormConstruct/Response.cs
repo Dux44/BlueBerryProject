@@ -38,6 +38,9 @@ namespace BlueBerryProject.FormConstruct
         private int counterTasks = 0;
         private Dictionary<TextBox, bool> textBoxStates = new Dictionary<TextBox, bool>();
 
+        private bool isTestButtonIsActive;
+        
+
         //властивості
         public double rWidth
         {
@@ -66,9 +69,21 @@ namespace BlueBerryProject.FormConstruct
                 Margin = margin;
             }
         }
+        public bool IsTestButtonOn
+        {
+            get { return isTestButtonIsActive; }
+            set
+            {
+                if(isTestButtonIsActive != value)
+                {
+                    isTestButtonIsActive = value;
+                    OnTestButtonStateChanged?.Invoke(value);
+                }
+            }
+        }
 
         //події
-
+        public event Action<bool> OnTestButtonStateChanged;
         public Response(int countOfCorrectAnswers)
         {
             Header = "Response";
@@ -166,16 +181,29 @@ namespace BlueBerryProject.FormConstruct
         
         public ResponseDTO GatherDataToDTO()
         {
-            return new ResponseDTO
-            {
-                MaxValue = this.maxValue,
-                LoverValue = doubleSlider.LowerValue,
-                UpperValue = doubleSlider.UpperValue,
-                IsChecked = (bool)checkDoubleSlider.IsChecked,
-                RedZoneText = redZoneResponse.Text.ToString(),
-                YellowZoneText = yellowZoneResponse.Text.ToString(),
-                GreenZoneText = greenZoneResponse.Text.ToString(),
-            };
+            ResponseDTO responseDTO = new ResponseDTO();
+            responseDTO.MaxValue = this.maxValue;
+            responseDTO.LoverValue = doubleSlider.LowerValue;
+            responseDTO.UpperValue = doubleSlider.UpperValue;
+            responseDTO.IsChecked = (bool)checkDoubleSlider.IsChecked;
+            responseDTO.RedZoneText = redZoneResponse.Text.ToString();
+            responseDTO.YellowZoneText = yellowZoneResponse.Text.ToString();
+            responseDTO.GreenZoneText = greenZoneResponse.Text.ToString();
+
+
+            int lowerValue = Convert.ToInt32(Math.Floor(doubleSlider.LowerValue)); //округлення до меншого
+            int upperValue = Convert.ToInt32(Math.Floor(doubleSlider.UpperValue));
+            
+            int[] firstInterval = { 0, lowerValue};
+            int[] secondInterval = {lowerValue, upperValue };
+            int[] thirdInterval = { upperValue, maxValue };
+
+            responseDTO.FirstInteval = firstInterval;
+            responseDTO.SecondInterval = secondInterval;
+            responseDTO.ThirdInterval = thirdInterval;
+
+            return responseDTO;
+           
         }
         private void CreateGridForResponse()
         {
@@ -461,11 +489,13 @@ namespace BlueBerryProject.FormConstruct
                     conditionsMet = true;
                     MessageBox.Show("Умови виконані, можна продовжити до проходження тесту!");
                     //тут делегат який передає bool змінну для ввімкнення кнопки test
+                    IsTestButtonOn = true;
                 }
             }
             else
             {
                 //тут делегат який передає дані про вимкнення кнопки test
+                IsTestButtonOn = false;
                 conditionsMet = false;
             }
         }
@@ -517,6 +547,7 @@ namespace BlueBerryProject.FormConstruct
             }
             CheckCondidions();
         } //подія на вловлення будь-якої зміни одного з троьх textBox + перевірка чи стоїсть галочка в 
+
        
     }
 }

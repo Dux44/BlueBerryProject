@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static BlueBerryProject.FormConstruct.QuestionsDTO;
+using BlueBerryProject.FormTest;
 
 namespace BlueBerryProject.FormConstruct
 {
@@ -41,6 +42,8 @@ namespace BlueBerryProject.FormConstruct
         List<Question> questions = new List<Question>();
 
         private Response response;
+
+        private int currentNumbersOfCorrect = 0;
 
         //private readonly string notAllowedSymbols = "/&^?\\|<>*:"; //заборонені символи бо в шляху вони викличуть exeption
         //властивості
@@ -125,25 +128,50 @@ namespace BlueBerryProject.FormConstruct
             ProjectDataDTO data = file.LoadData(); //присвоюються дані в дтошку
 
             txDescriptionOfProject.Text = data.Description;
-
-            foreach(var questionDTO in data.Questions)
+            if(data?.Questions == null || data.Questions.Count == 0)
             {
-                Question question = new Question(questionDTO, questions.Count + 1);
-                question.OnDelete += bDeleteQuestion_Click;
-                question.OnQuestionCopied += bCopyQuestion_OnQuestionCopied;
-                question.OnCompletionStatusChanged += Question_OnCompletionStatusChanged;
-                questions.Add(question);
-                question.ShowAllItems(wpPannel, questionDTO);
-                TotalQuestion++;
+                MessageBox.Show("There is no one quesiton!");
+                return;
             }
-            response = new Response(data.Response.MaxValue);
-            response.CreateUIForResponse(wpPannel);
-            response.UpdateDoubleSliderValuesFromDTO(data.Response.MaxValue, data.Response.LoverValue, data.Response.UpperValue);
-            response.UpdateCheckBoxFromDTO(data.Response.IsChecked);
-            response.UpdateTextes(data.Response.RedZoneText, data.Response.YellowZoneText, data.Response.GreenZoneText);
-            response.SetControlState(false);
+            try
+            {
+                foreach (var questionDTO in data.Questions)
+                {
+                    Question question = new Question(questionDTO, questions.Count + 1);
+                    question.OnDelete += bDeleteQuestion_Click;
+                    question.OnQuestionCopied += bCopyQuestion_OnQuestionCopied;
+                    question.OnCompletionStatusChanged += Question_OnCompletionStatusChanged;
+                    questions.Add(question);
+                    question.ShowAllItems(wpPannel, questionDTO);
+                    TotalQuestion++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"With deserealized quesiton some error occured:\r{ex}");
+            }
+            if(data?.Response == null)
+            {
+                MessageBox.Show("Response is null!");
+                return;
+            }
+            try
+            {
+                response = new Response(data.Response.MaxValue);
+                response.CreateUIForResponse(wpPannel);
+                response.UpdateDoubleSliderValuesFromDTO(data.Response.MaxValue, data.Response.LoverValue, data.Response.UpperValue);
+                response.UpdateCheckBoxFromDTO(data.Response.IsChecked);
+                response.UpdateTextes(data.Response.RedZoneText, data.Response.YellowZoneText, data.Response.GreenZoneText);
+                response.SetControlState(false);
+                response.OnTestButtonStateChanged += Response_OnTestButtonStateChanged;
 
-            currentNumbersOfCorrect = GetNumberOfCorrectsFromQuestion(); //оновлюємо значення для наступної перевірки для метода bLockControlOnQuestion_Click
+                currentNumbersOfCorrect = GetNumberOfCorrectsFromQuestion(); //оновлюємо значення для наступної перевірки для метода bLockControlOnQuestion_Click
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"With deserealized response some error occured:\r{ex}");
+            }
+           
         }
         private void bBackToMainWindow_Click(object sender, RoutedEventArgs e)
         {
@@ -170,13 +198,19 @@ namespace BlueBerryProject.FormConstruct
         }
         private ProjectDataDTO GatherDataToDTO()
         {
-            return new ProjectDataDTO
+            ProjectDataDTO projectDataDTO = new ProjectDataDTO();
+            projectDataDTO.Description = txDescriptionOfProject.Text.ToString();
+            if (questions.Count != 0)
             {
-                Description = txDescriptionOfProject.Text.ToString(),
-                Questions = questions.Select(q => q.GatherDataToDTO()).ToList(),
-                Response = response.GatherDataToDTO(),
+                projectDataDTO.Questions = questions.Select(q => q.GatherDataToDTO()).ToList();
+            }
+            //else projectDataDTO.Questions = null;
 
-            };
+            if (response != null)
+            {
+                projectDataDTO.Response = response.GatherDataToDTO();
+            }
+            return projectDataDTO;
         }
         private void txDescriptionOfProject_TextChanged(object sender, TextChangedEventArgs e) //подія для обробки автоматичного збільшення текстового поля для написання опису проєкту
         {
@@ -331,7 +365,7 @@ namespace BlueBerryProject.FormConstruct
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        private int currentNumbersOfCorrect = 0;
+        
         private void bLockControlsOnQuestion_Click(object sender, RoutedEventArgs e)
         {
             if(TotalQuestion == 0)
@@ -384,9 +418,11 @@ namespace BlueBerryProject.FormConstruct
             response = new Response(GetNumberOfCorrectsFromQuestion());
             response.CreateUIForResponse(wpPannel);
             bAddResponse.IsEnabled = false;
+            response.OnTestButtonStateChanged += Response_OnTestButtonStateChanged; //подія на ввімкнення вимкнення кнопки TEST при умовах у класі RESPONSE
 
             currentNumbersOfCorrect = GetNumberOfCorrectsFromQuestion(); //оновлюємо значення для наступної перевірки для метода bLockControlOnQuestion_Click
         }
+
         private void bLockControlOnResponse_Click(object sender, RoutedEventArgs e)
         {
             //unlock question
@@ -417,9 +453,23 @@ namespace BlueBerryProject.FormConstruct
         //методи повязані з переходом на іншу форму TEST_FORM
         private void bTest_Click(object sender, RoutedEventArgs e)
         {
-
+            SaveData();
+            ProjectDataDTO projectDataDTO = GatherDataToDTO();
+            TestCompletion testCompletion = new TestCompletion(projectDataDTO,name);
+            Hide();
+            testCompletion.ShowDialog();
+            Show();
         }
-
-        
+        private void Response_OnTestButtonStateChanged(bool state) //обробник події OnTestButtonStateChanged і вмикає або вимикає кнопку TEST
+        {
+            if (state)
+            {
+                bTest.IsEnabled = true;
+            }
+            else
+            {
+                bTest.IsEnabled = false;
+            }
+        }
     }
 }

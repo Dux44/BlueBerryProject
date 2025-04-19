@@ -1,0 +1,165 @@
+{
+  "Description": "new test project to test testing",
+  "Questions": [
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text initial Text  initial Text initial Text initial Text initial Text initial Text initial Text initial Text v initial Text  initial Text ",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "false"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text initial Text initial Text initial Text initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1 initial Text initial Text initial Text initial Text"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "truet"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 1"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 3"
+        }
+      ]
+    },
+    {
+      "QuestionType": "RadioButton",
+      "QuestionText": "initial Text",
+      "SelectedIndex": 0,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "RadioButton",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 2initial Text"
+        },
+        {
+          "AnswerType": "RadioButton",
+          "State": 2,
+          "AnswerText": "Variant 3initial Text"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textinitial Textinitial Textinitial Textinitial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2initial Textinitial Textinitial Textinitial Text"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 3initial Textinitial Textinitial Text"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textinitial Textinitial Textinitial Textinitial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 1initial Textinitial Textinitial Text"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        }
+      ]
+    },
+    {
+      "QuestionType": "CheckBox",
+      "QuestionText": "initial Textinitial Textinitial Textinitial Textinitial Text",
+      "SelectedIndex": 1,
+      "multipleObjectsDTO": [
+        {
+          "AnswerType": "CheckBox",
+          "State": 1,
+          "AnswerText": "true"
+        },
+        {
+          "AnswerType": "CheckBox",
+          "State": 2,
+          "AnswerText": "Variant 2initial Textinitial Textinitial Text"
+        }
+      ]
+    }
+  ],
+  "Response": {
+    "MaxValue": 7,
+    "LoverValue": 1.5995402298850576,
+    "UpperValue": 3.3149425287356324,
+    "IsChecked": true,
+    "RedZoneText": "red text",
+    "YellowZoneText": "yellow text",
+    "GreenZoneText": "green text",
+    "FirstInteval": [
+      0,
+      1
+    ],
+    "SecondInterval": [
+      1,
+      3
+    ],
+    "ThirdInterval": [
+      3,
+      7
+    ]
+  }
+}
